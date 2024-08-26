@@ -2,17 +2,11 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import pickle
-from sklearn.linear_model import LogisticRegression
-from sklearn.svm import SVC, LinearSVC
-from sklearn.tree import DecisionTreeClassifier
 
-# Load the trained models (this assumes you have saved these models as .pkl files)
-models = {
-    'Logistic Regression': LogisticRegression(),
-    'SVM (Linear)': LinearSVC(C=1, loss="hinge"),
-    'SVM (Non-linear)': SVC(kernel='poly', C=1, degree=6, coef0=0, probability=True),
-    'Decision Tree': DecisionTreeClassifier(max_depth=3)
-}
+# Load the pre-trained models from the 'model.pkl' file
+model_path = 'model.pkl'
+with open(model_path, 'rb') as file:
+    models = pickle.load(file)
 
 # Title and introduction
 st.title('Diabetes Prediction App')
