@@ -28,10 +28,14 @@ def user_input_features():
     Glucose = st.sidebar.slider('Glucose', 0, 200, 120)
     BMI = st.sidebar.slider('BMI', 0.0, 50.0, 25.0)
 
-    data = {'Pregnancies': Pregnancies,
-            'Glucose': Glucose,
-            'BMI': BMI}
-    features = pd.df(data, index=[0])
+    data = {
+        'Pregnancies': Pregnancies,
+        'Glucose': Glucose,
+        'BMI': BMI
+    }
+    
+    # Use pd.DataFrame to create the DataFrame
+    features = pd.DataFrame(data, index=[0])
     return features
 
 # Display input features
