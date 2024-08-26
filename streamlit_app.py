@@ -31,7 +31,7 @@ def user_input_features():
     data = {'Pregnancies': Pregnancies,
             'Glucose': Glucose,
             'BMI': BMI}
-    features = pd.DataFrame(data, index=[0])
+    features = pd.df(data, index=[0])
     return features
 
 # Display input features
